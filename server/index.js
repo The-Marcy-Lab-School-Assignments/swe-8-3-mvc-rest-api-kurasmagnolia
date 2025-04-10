@@ -13,3 +13,37 @@ const getId = require('./utils/getId');
 ////////////////////////
 
 const app = express();
+
+// Mock Database
+const skateboards = [
+  {
+    name: '',
+    id: getId(),
+    brand: '',
+    size: '',
+    color: '',
+    style: '',
+    price: 0,
+    image: '',
+  },
+  {
+    name: '',
+    id: getId(),
+    brand: '',
+    size: '',
+    color: '',
+    style: '',
+    price: 0,
+    image: '',
+  },
+  {
+    name: '',
+    id: getId(),
+    brand: '',
+    size: '',
+    color: '',
+    style: '',
+    price: 0,
+    image: '',
+  },
+];
