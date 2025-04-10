@@ -13,6 +13,7 @@ const getId = require('./utils/getId');
 ////////////////////////
 
 const app = express();
+const pathToFrontendDist = path.join(__dirname, '../frontend/dist');
 
 // Mock Database
 const skateboards = [
@@ -47,3 +48,20 @@ const skateboards = [
     image: '',
   },
 ];
+
+////////////////////////
+// Middleware
+////////////////////////
+
+const logRoutes = (req, res, next) => {
+  const time = new Date().toLocaleString();
+  req.time = time;
+  console.log(`${req.method}: ${req.originalUrl} - ${time}`);
+  next();
+};
+
+const serveStatic = express.static(pathToFrontendDist);
+
+app.use(logRoutes); // Print out every incoming request
+app.use(serveStatic); // Serve static public/ content
+app.use(express.json());
