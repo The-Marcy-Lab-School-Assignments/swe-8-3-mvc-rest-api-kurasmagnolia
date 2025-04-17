@@ -16,40 +16,6 @@ const PORT = 8080;
 const app = express();
 const pathToFrontendDist = path.join(__dirname, '../frontend/dist');
 
-// Mock Database
-const skateboards = [
-  {
-    name: '',
-    id: getId(),
-    brand: '',
-    size: '',
-    color: '',
-    style: '',
-    price: 0,
-    image: '',
-  },
-  {
-    name: '',
-    id: getId(),
-    brand: '',
-    size: '',
-    color: '',
-    style: '',
-    price: 0,
-    image: '',
-  },
-  {
-    name: '',
-    id: getId(),
-    brand: '',
-    size: '',
-    color: '',
-    style: '',
-    price: 0,
-    image: '',
-  },
-];
-
 ////////////////////////
 // Middleware
 ////////////////////////
