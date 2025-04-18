@@ -72,12 +72,12 @@ class Skateboard {
   }
 
   // Update one value from the "database"
-  static editSkateboardName(id, newName) {
-    const skateboard = Skateboard.findSkateboard(id);
-    if (!skateboard) return null;
-    skateboard.name = newName;
-    return skateboard;
-  }
+  // static editSkateboardProperty(id, newName) {
+  //   const skateboard = Skateboard.findSkateboard(id);
+  //   if (!skateboard) return null;
+  //   skateboard.name = newName;
+  //   return skateboard;
+  // }
 
   // Delete one value from the "database"
   static deleteSkateboard(id) {
