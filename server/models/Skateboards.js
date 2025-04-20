@@ -46,7 +46,7 @@ class Skateboard {
   // Create and add the new fellow to the "database" (the fellows array)
   // Rather than using a constructor, we use a static method to create a new fellow
   static createSkateboard(name, brand, type, style, color, size, price, image) {
-    const newSKateboard = {
+    const newSkateboard = {
       name: name,
       id: getId(),
       brand: brand,
@@ -57,8 +57,8 @@ class Skateboard {
       price: price,
       image: image,
     };
-    skateboards.push(newSKateboard);
-    return newSKateboard;
+    skateboards.push(newSkateboard);
+    return newSkateboard;
   }
 
   // Get all values from the "database"
@@ -71,13 +71,19 @@ class Skateboard {
     return skateboards.find((skateboard) => skateboard.id === id);
   }
 
-  // Update one value from the "database"
-  // static editSkateboardProperty(id, newName) {
-  //   const skateboard = Skateboard.findSkateboard(id);
-  //   if (!skateboard) return null;
-  //   skateboard.name = newName;
-  //   return skateboard;
-  // }
+  // Update one or more values in the "database"
+  static editSkateboardProperty(id, updates) {
+    const skateboard = Skateboard.findSkateboard(id);
+    if (!skateboard) return null;
+
+    for (const key in updates) {
+      if (skateboard.hasOwnProperty(key)) {
+        skateboard[key] = updates[key];
+      }
+    }
+
+    return skateboard;
+  }
 
   // Delete one value from the "database"
   static deleteSkateboard(id) {
