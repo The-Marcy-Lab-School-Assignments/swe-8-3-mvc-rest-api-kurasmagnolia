@@ -16,7 +16,7 @@ export const createSkateboard = async (newSkateboard) => {
   const options = {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
-    body: JSON.stringify({ newSkateboard }),
+    body: JSON.stringify(newSkateboard),
   };
 
   const [createdSkateboard, error] = await handleFetch(
