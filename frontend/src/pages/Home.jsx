@@ -57,7 +57,13 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <h1>Welcome to King's Skateboard Hub!</h1>
+      <h2>Submit one of your favorite skateboards!</h2>
+      <h3>
+        P.S: For images, copy the "Image address" of it and paste it in the
+        Image URL field!
+      </h3>
+
       <form onSubmit={handleCreateSkateboard}>
         <label>
           Name:{' '}
@@ -133,9 +139,12 @@ const Home = () => {
           />
         </label>
         <br />
-        <button type="submit">Submit</button>
+        <button type="submit" style={{ marginTop: '10px' }}>
+          Submit
+        </button>
       </form>
 
+      <h3>List of skateboards:</h3>
       <ul>
         {skateboards.map((skateboard) => (
           <li key={skateboard.id}>
